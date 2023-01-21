@@ -1,14 +1,13 @@
 <script>
 export default {
-    name: 'HomePage'
+    name: 'AboutUs'
 }
 </script>
 
 <template>
     <main>
         <div class="container">
-            <h2 class="mt-3 text-center">Home Page</h2>
+            <h1 class="text-center mt-3">About us</h1>
         </div>
     </main>
 </template>
-
