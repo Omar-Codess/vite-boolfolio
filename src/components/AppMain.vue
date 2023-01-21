@@ -1,12 +1,14 @@
 <script>
 import axios from 'axios';
+import ProjectCard from './ProjectCard.vue';
 
 export default {
     name: "AppMain",
+    components: { ProjectCard },
     data() {
     return {
         baseUrl: 'http://127.0.0.1:8000',
-        projects: []
+        projects: [],
     }
   },
   created() {
@@ -27,13 +29,7 @@ export default {
         <h2>Tutti i progetti</h2>
         <div class="row justify-content-center">
             <div class="col-11 col-md-10 col-lg-8">
-                <div class="card mb-3" v-for="project in projects" :key="project.id">
-                    <div class="card-body">
-                        <h3 class="card-title">{{ project.title }}</h3>
-                        <p class="card-text">{{ project.description }}</p>
-                        <a class="btn btn-primary" href="">Leggi</a>
-                    </div>
-                </div>
+                <ProjectCard :project="project" v-for="project in projects" :key="project.id"/>
             </div>
         </div>
     </div>
