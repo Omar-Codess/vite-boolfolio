@@ -27,7 +27,7 @@ export default {
             <p class="card-text">
                 {{ truncateText(project.description) }}
             </p>
-            <a class="btn btn-primary" href="">Leggi</a>
+            <router-link :to="{name: 'single-project', params: {slug: project.slug}}" class="btn btn-primary" href="">Leggi</router-link>
         </div>
     </div>
 </template>
