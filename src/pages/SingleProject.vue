@@ -6,11 +6,19 @@ export default {
     name: "SingleProject",
     data() {
         return {
-            store
+            store,
+            project: {}
         }
     },
     created() {
-        axios.get(``)
+        const slug = this.$route.params.slug;
+        axios.get(`${this.store.apiBaseUrl}/api/projects/${slug}`).then(resp => {
+            if(resp.data.success) {
+                this.project = resp.data.project;
+            } else {
+                this.$router.push({name: "not-found"})
+            }
+        });
     }
 }
 </script>
